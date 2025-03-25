@@ -33,7 +33,7 @@ body {
     text-decoration: none;
     color: white;
     padding: 15px 20px; /* Daha geniş iç boşluk */
-    margin: 5px 0; /* Dikey boşluk */
+    margin: 0 0; /* Dikey boşluk */
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
     display: block; /* Blok düzey eleman */
