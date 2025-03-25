@@ -54,7 +54,7 @@ body {
     }
 
     .navbar a {
-        width: 80%; /* Daha geniş bir düzen için genişlik sınırlanır */
+        width: 60%; /* Daha geniş bir düzen için genişlik sınırlanır */
     }
 }
 
