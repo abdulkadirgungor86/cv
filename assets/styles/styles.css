@@ -13,7 +13,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 0 0;
 }
 
 .navbar ul {
@@ -33,7 +33,7 @@ body {
     text-decoration: none;
     color: white;
     padding: 15px 20px; /* Daha geniş iç boşluk */
-    margin: 0 0; /* Dikey boşluk */
+    margin: 5px 0; /* Dikey boşluk */
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
     display: block; /* Blok düzey eleman */
@@ -48,13 +48,19 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 340px; /* Navbar yüksekliğini boşluk olarak ekler */
+    }
+
+
     .navbar ul {
         flex-direction: column; /* Menü öğelerini dikey hizalar */
         align-items: center;
     }
 
     .navbar a {
-        width: 60%; /* Daha geniş bir düzen için genişlik sınırlanır */
+        width: 80%; /* Daha geniş bir düzen için genişlik sınırlanır */
     }
 }
 
@@ -90,6 +96,7 @@ body {
 .section {
     padding: 20px;
     margin: 20px auto;
+    scroll-margin-top: 70px; 
     max-width: 1200px;
     background-color: white;
     border-radius: 10px;
