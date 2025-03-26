@@ -7,64 +7,81 @@ body {
     color: #333;
 }
 
+/* Genel Ayarlar */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
 /* Navbar */
 .navbar {
     background-color: #333;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 0;
 }
 
 .navbar ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Dar ekranlarda elemanların düzgün sarılmasını sağlar */
+    display: flex;
+    flex-wrap: wrap; /* Büyük ekranlar için sarma */
+    justify-content: center; /* Büyük ekranlarda ortalama */
 }
 
+/* Menü öğeleri */
 .navbar li {
-    margin: 0 0; /* Dikey boşluk ekler */
+    margin: 0;
 }
 
 .navbar a {
     text-decoration: none;
     color: white;
-    padding: 15px 20px; /* Daha geniş iç boşluk */
-    margin: 5px 0; /* Dikey boşluk */
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 5px;
-    display: block; /* Blok düzey eleman */
-    max-width: 250px; /* Maksimum genişlik */
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+    display: block;
     text-align: center;
 }
 
-/* Hover efekti */
 .navbar a:hover {
     background-color: #007BFF;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    html {
-        scroll-padding-top: 340px; /* Navbar yüksekliğini boşluk olarak ekler */
-    }
-
-
-    .navbar ul {
-        flex-direction: column; /* Menü öğelerini dikey hizalar */
-        align-items: center;
-    }
-
-    .navbar a {
-        width: 80%; /* Daha geniş bir düzen için genişlik sınırlanır */
-    }
+/* Menü Toggle */
+.menu-label {
+    display: none;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
+/* Checkbox için */
+.menu-checkbox {
+    display: none; /* Gizli checkbox */
+}
 
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .menu-label {
+        display: block; /* Mobilde toggle butonu görünür */
+    }
+
+    .navbar ul {
+        display: none; /* Varsayılan olarak gizli */
+        flex-direction: column; /* Dikey hizalama */
+        align-items: center; /* Merkezleme */
+    }
+
+    .menu-checkbox:checked + .menu-label + ul {
+        display: flex; /* Toggle ile görünür hale gelir */
+    }
+}
 /* Header */
 .header {
     text-align: center;
@@ -96,7 +113,7 @@ body {
 .section {
     padding: 20px;
     margin: 20px auto;
-    scroll-margin-top: 70px; 
+    scroll-margin-top: 60px; 
     max-width: 1200px;
     background-color: white;
     border-radius: 10px;
